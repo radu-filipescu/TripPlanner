@@ -1,23 +1,20 @@
 package Objects;
 
-import java.awt.image.IndexColorModel;
-
-public class Remainder {
+public class Reminder {
     private static int IdIncrement = 0;
     private final int Id;
     private String title;
+    private String description;
 
-    public Remainder() {
+    public Reminder() {
         this.Id = ++IdIncrement;
     }
 
-    public Remainder(String title, String description) {
+    public Reminder(String title, String description) {
         this.Id = ++IdIncrement;
         this.title = title;
         this.description = description;
     }
-
-    private String description;
 
     public void setTitle(String title) {
         this.title = title;
@@ -37,5 +34,11 @@ public class Remainder {
 
     public String getDescription() {
         return description;
+    }
+
+    public void prettyPrint() {
+        System.out.println("*********************");
+        System.out.println(title);
+        System.out.println(description + "\n");
     }
 }

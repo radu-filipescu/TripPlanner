@@ -1,14 +1,11 @@
 package com.company;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
-    public static List<String> commands = Arrays.asList("add objective", "list objectives", "mark objective as seen", "show details for objective",
-            "add travel method", "show travel methods", "add remainder", "show remainders", "mark remainder as done", "remove remainder");
+    public static ArrayList<String> commands = new ArrayList<String>(Arrays.asList("add objective", "list objectives", "mark objective as seen", "show details for objective",
+            "add travel method", "show travel methods", "add reminder", "show reminders", "mark reminder as done", "remove reminder"));
 
     public static void main(String[] args) throws IOException {
         boolean done = false;
@@ -23,15 +20,15 @@ public class Main {
 
             switch (command) {
                 case "add objective" -> mainService.addObjective(in);
-//                case "list objectives" -> mainService.listObjectives(in);
+                case "list objectives" -> mainService.listObjectives();
 //                case "mark objective as seen" -> mainService.markObjectiveSeen(in);
 //                case "show details for objective" -> mainService.showDetailsObjective(in);
 //                case "add travel method" -> mainService.addTravelMethod(in);
 //                case "show travel methods" -> mainService.showTravelMethods(in);
-//                case "add remainder" -> mainService.addRemainder(in);
-//                case "show remainders" -> mainService.showRemainders(in);
-//                case "mark remainder as done" -> mainService.markRemainderDone(in);
-//                case "remove remainder" -> mainService.removeRemainder(in);
+//                case "add reminder" -> mainService.addReminder(in);
+//                case "show reminders" -> mainService.showReminders(in);
+//                case "mark reminder as done" -> mainService.markReminderDone(in);
+//                case "remove reminder" -> mainService.removeRemainder(in);
                 case "help" -> Main.printCommands();
                 case "quit" -> done = true;
                 default -> System.out.println("invalid command!\n");

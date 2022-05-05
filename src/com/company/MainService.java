@@ -6,12 +6,14 @@ import Objects.TravelMethods.LongDistance;
 import Objects.TravelMethods.ShortDistance;
 import Objects.VisitingObjective;
 import com.company.services.ObjectiveService;
+import com.company.services.ReminderService;
 
 import java.sql.Time;
 import java.util.*;
 
 public class MainService {
     ObjectiveService objectiveService = new ObjectiveService();
+    ReminderService reminderService = new ReminderService();
 
     private ArrayList<VisitingObjective> objectives = new ArrayList<VisitingObjective>();
     private ArrayList<Reminder> reminders = new ArrayList<Reminder>();
@@ -218,8 +220,7 @@ public class MainService {
         }
     }
 
-    public void removeTravelMethod(Scanner in)
-    {
+    public void removeTravelMethod(Scanner in) {
         System.out.println("enter number of the travel mean you want to remove");
         int idx = Integer.parseInt(in.nextLine());
 
@@ -240,7 +241,12 @@ public class MainService {
         System.out.println("enter a description for this reminder: (or press enter to leave blank)");
         newReminder.setDescription(in.nextLine());
 
-        reminders.add(newReminder);
+        // in-memory version (first stage of the project)
+        // reminders.add(newReminder);
+
+        // JDBC persistence version
+        reminderService.addReminder(newReminder);
+
         System.out.println("reminder added!");
     }
 

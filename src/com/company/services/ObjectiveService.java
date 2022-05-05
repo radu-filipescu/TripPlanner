@@ -1,5 +1,6 @@
 package com.company.services;
 
+import Objects.Reminder;
 import Objects.VisitingObjective;
 import com.company.JDBCgeneric;
 
@@ -10,11 +11,34 @@ import java.util.ArrayList;
 public class ObjectiveService extends JDBCgeneric {
     final private String tableName = "objectives";
 
+    private int getIdOfAddedObjective() {
+        ResultSet result = executeSQLquery("select * from " + tableName + " order by Id desc limit 1");
+
+        int idx = 0;
+
+        try {
+            while(result.next()) {
+                idx = result.getInt("Id");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return idx;
+    }
+
     public void addObjective(VisitingObjective obj) {
         String addQuery = "insert into " + tableName + "(name, location, timeToVisit, seen) values(";
         addQuery += "'" + obj.getName() + "', '" + obj.getLocation() + "', " + obj.getEstimatedTimeToVisit() + ", " + obj.getSeen() + ")";
 
         executeSQLupdate(addQuery);
+        int idx = getIdOfAddedObjective();
+
+        ReminderService reminderService = new ReminderService();
+        for(Reminder rem: obj.getToDoDependencies()) {
+            rem.setObjectiveId(idx);
+            reminderService.addReminder(rem);
+        }
     }
 
     public ArrayList<VisitingObjective> getObjectives() {

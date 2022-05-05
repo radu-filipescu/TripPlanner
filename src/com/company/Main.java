@@ -13,6 +13,8 @@ public class Main {
 
         var mainService = new MainService();
 
+        System.out.println("\nWelcome to trip-planner!\n");
+
         while(!done) {
             System.out.println("Insert command:");
             System.out.println("input 'help' to see commands\n");
@@ -25,6 +27,7 @@ public class Main {
                 case "show details for objective" -> mainService.showDetailsForObjective(in);
                 case "add travel method" -> mainService.addTravelMethod(in);
                 case "show travel methods" -> mainService.showTravelMethods();
+                case "remove travel method" -> mainService.removeTravelMethod(in);
                 case "add reminder" -> mainService.addReminder(in);
                 case "show reminders" -> mainService.showReminders(in);
                 case "mark reminder as done" -> mainService.markReminderDone(in);

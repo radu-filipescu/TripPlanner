@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f7a2a6f-29a3-47d6-bf69-106e3cffcb67" name="Changes" comment="implemented more stuff">
+    <list default="true" id="1f7a2a6f-29a3-47d6-bf69-106e3cffcb67" name="Changes" comment="base functionality done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/Reminder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/Reminder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectEAP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectEAP.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/MainService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/MainService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/Reminder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Reminder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/MainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MainService.java" afterDir="false" />
     </list>
@@ -105,6 +104,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/mysql-connector-java-8.0.29.jar" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -161,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651746035253</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="base functionality done">
+      <created>1651747650032</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1651747650032</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -192,6 +202,7 @@
     <MESSAGE value="changed project config" />
     <MESSAGE value="implemented objective list and did some refactoring" />
     <MESSAGE value="implemented more stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented more stuff" />
+    <MESSAGE value="base functionality done" />
+    <option name="LAST_COMMIT_MESSAGE" value="base functionality done" />
   </component>
 </project>

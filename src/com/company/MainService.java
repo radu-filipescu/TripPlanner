@@ -6,7 +6,6 @@ import Objects.TravelMethods.LongDistance;
 import Objects.TravelMethods.ShortDistance;
 import Objects.VisitingObjective;
 
-import javax.swing.text.html.StyleSheet;
 import java.sql.Time;
 import java.util.*;
 
@@ -209,6 +208,19 @@ public class MainService {
             }
 
             System.out.println();
+        }
+    }
+
+    public void removeTravelMethod(Scanner in)
+    {
+        System.out.println("enter number of the travel mean you want to remove");
+        int idx = Integer.parseInt(in.nextLine());
+
+        if(idx < 1 || idx > travelMethods.size()) {
+            System.out.println("error, there is no travel method with that number");
+        }
+        else {
+            travelMethods.remove(idx);
         }
     }
 

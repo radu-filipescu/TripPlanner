@@ -5,11 +5,14 @@ import Objects.TravelMethod;
 import Objects.TravelMethods.LongDistance;
 import Objects.TravelMethods.ShortDistance;
 import Objects.VisitingObjective;
+import com.company.services.ObjectiveService;
 
 import java.sql.Time;
 import java.util.*;
 
 public class MainService {
+    ObjectiveService objectiveService = new ObjectiveService();
+
     private ArrayList<VisitingObjective> objectives = new ArrayList<VisitingObjective>();
     private ArrayList<Reminder> reminders = new ArrayList<Reminder>();
     private ArrayList<TravelMethod> travelMethods = new ArrayList<TravelMethod>();
@@ -47,13 +50,17 @@ public class MainService {
 
         newObjective.setToDoDependencies(objectiveRemList);
 
-        // add the new objective to the list
-        objectives.add(newObjective);
+        // in-memory version (first stage of the project)
+        // objectives.add(newObjective);
 
-        System.out.println("objective added succesfully!");
+        // JDBC persistence version
+        objectiveService.addObjective(newObjective);
+
+        System.out.println("objective added succesfully!\n");
     }
 
     public void listObjectives() {
+        objectives = objectiveService.getObjectives();
         for (VisitingObjective obj: objectives) {
             // prints unseen objectives
             if(!obj.getSeen()) {

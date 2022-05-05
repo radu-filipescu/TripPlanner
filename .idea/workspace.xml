@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f7a2a6f-29a3-47d6-bf69-106e3cffcb67" name="Changes" comment="base functionality done">
+    <list default="true" id="1f7a2a6f-29a3-47d6-bf69-106e3cffcb67" name="Changes" comment="added JDBC connector">
+      <change afterPath="$PROJECT_DIR$/src/com/company/JDBCgeneric.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/services/ObjectiveService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/services/ReminderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProiectEAP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectEAP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/Reminder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/Reminder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/TravelMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/TravelMethod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/VisitingObjective.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/VisitingObjective.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/MainService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/MainService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/Reminder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Reminder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/TravelMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/TravelMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/VisitingObjective.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/VisitingObjective.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/MainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MainService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651747650032</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added JDBC connector">
+      <created>1651758032301</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1651758032301</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -203,6 +216,7 @@
     <MESSAGE value="implemented objective list and did some refactoring" />
     <MESSAGE value="implemented more stuff" />
     <MESSAGE value="base functionality done" />
-    <option name="LAST_COMMIT_MESSAGE" value="base functionality done" />
+    <MESSAGE value="added JDBC connector" />
+    <option name="LAST_COMMIT_MESSAGE" value="added JDBC connector" />
   </component>
 </project>

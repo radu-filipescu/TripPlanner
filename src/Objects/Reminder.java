@@ -1,19 +1,17 @@
 package Objects;
 
 public class Reminder {
-    private static int IdIncrement = 0;
-    private final int Id;
+    private int objectiveId;
     private String title;
     private String description;
     private boolean done;
 
     public Reminder() {
-        this.Id = ++IdIncrement;
         done = false;
+        objectiveId = 0;
     }
 
     public Reminder(String title, String description) {
-        this.Id = ++IdIncrement;
         this.title = title;
         this.description = description;
     }
@@ -26,9 +24,9 @@ public class Reminder {
         this.description = description;
     }
 
-    public int getId() {
-        return Id;
-    }
+    public void setObjectiveId(int id) { objectiveId = id; }
+
+    public int getObjectiveId() { return objectiveId; }
 
     public String getTitle() {
         return title;
@@ -44,7 +42,7 @@ public class Reminder {
 
     public void prettyPrint() {
         System.out.println("*********************");
-        System.out.println(Id + ". " + title);
+        System.out.println(title);
         if(description.length() > 0)
             System.out.println(description);
         if(done) System.out.println("- completed -");

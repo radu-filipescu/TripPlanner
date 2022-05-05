@@ -4,17 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VisitingObjective {
-    private static int IdIncrement = 0;
-    private final int Id;
+    private int Id;
     private String name;
     private String location;
     private double estimatedTimeToVisit;
     private ArrayList<Reminder> toDoDependencies;
     private boolean wasSeen;
 
-    public VisitingObjective() {
-        this.Id = ++IdIncrement;
-    }
+    public void setId(int id) { Id = id; }
 
     public int getId() {
         return Id;

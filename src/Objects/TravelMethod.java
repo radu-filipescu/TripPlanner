@@ -5,18 +5,13 @@ import java.util.List;
 import java.util.Set;
 
 public class TravelMethod {
-    private static int IdIncrement = 0;
-    private final int Id;
+    private int Id;
     private String name;
     private String price;
 
-    public TravelMethod() {
-        this.Id = ++IdIncrement;
-    }
+    public void setId(int id) { Id = id; }
 
-    public int getId() {
-        return Id;
-    }
+    public int getId() { return Id; }
 
     public String getName() {
         return name;

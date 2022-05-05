@@ -34,11 +34,20 @@ public class ObjectiveService extends JDBCgeneric {
         executeSQLupdate(addQuery);
         int idx = getIdOfAddedObjective();
 
+        // now we will add the reminders
+        // associated with visiting this objective
+
         ReminderService reminderService = new ReminderService();
         for(Reminder rem: obj.getToDoDependencies()) {
             rem.setObjectiveId(idx);
             reminderService.addReminder(rem);
         }
+    }
+
+    public void markAsSeen(int idx) {
+        String updateQuery = "update " + tableName + " set seen=1 where Id=" + idx;
+
+        executeSQLupdate(updateQuery);
     }
 
     public ArrayList<VisitingObjective> getObjectives() {
@@ -57,6 +66,11 @@ public class ObjectiveService extends JDBCgeneric {
                 if(results.getBoolean("seen"))
                     currentObjective.setSeen();
 
+                // gets the associated reminders from the reminder table
+                ReminderService reminderService = new ReminderService();
+                ArrayList<Reminder> currentReminders = reminderService.getObjectiveReminders(currentObjective.getId());
+                currentObjective.setToDoDependencies(currentReminders);
+
                 objectives.add(currentObjective);
             }
         } catch (SQLException e) {
@@ -64,5 +78,35 @@ public class ObjectiveService extends JDBCgeneric {
         }
 
         return objectives;
+    }
+
+    public VisitingObjective getObjectiveById(int idx) {
+        String selectQuery = "select * from objectives where Id=" + idx;
+
+        VisitingObjective objective = new VisitingObjective();
+        ResultSet results = executeSQLquery(selectQuery);
+
+        try {
+            while (results.next()) {
+                VisitingObjective currentObjective = new VisitingObjective();
+                currentObjective.setId(results.getInt("Id"));
+                currentObjective.setName(results.getString("name"));
+                currentObjective.setLocation(results.getString("location"));
+                currentObjective.setEstimatedTimeToVisit(results.getDouble("timeToVisit"));
+                if(results.getBoolean("seen"))
+                    currentObjective.setSeen();
+
+                // gets the associated reminders from the reminder table
+                ReminderService reminderService = new ReminderService();
+                ArrayList<Reminder> currentReminders = reminderService.getObjectiveReminders(currentObjective.getId());
+                currentObjective.setToDoDependencies(currentReminders);
+
+                objective = currentObjective;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return objective;
     }
 }

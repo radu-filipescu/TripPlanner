@@ -11,6 +11,11 @@ public class VisitingObjective {
     private ArrayList<Reminder> toDoDependencies;
     private boolean wasSeen;
 
+    public VisitingObjective() {
+        // to avoid null-reference problems
+        toDoDependencies = new ArrayList<Reminder>();
+    }
+
     public void setId(int id) { Id = id; }
 
     public int getId() {

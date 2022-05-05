@@ -73,30 +73,21 @@ public class MainService {
     }
 
     public void markObjectiveSeen(Scanner in) {
+        objectives = objectiveService.getObjectives();
         System.out.println("enter the number of the objective you want to mark as seen");
 
         int idx = Integer.parseInt(in.nextLine());
 
-        if(idx < 1 || idx > objectives.size()) {
-            System.out.println("error, there is no objective with that number");
-        }
-        else {
-            objectives.get(idx - 1).setSeen();
-
-            System.out.println("objective number " + idx + " marked as visited!");
-        }
+        objectiveService.markAsSeen(idx);
+        System.out.println("objective number " + idx + " marked as visited!");
     }
 
     public void showDetailsForObjective(Scanner in) {
+        objectives = objectiveService.getObjectives();
         System.out.println("enter number of the objective you want to see details about");
         int idx = Integer.parseInt(in.nextLine());
 
-        if(idx < 1 || idx > objectives.size()) {
-            System.out.println("error, there is no objective with that number");
-        }
-        else {
-            objectives.get(idx - 1).prettyPrint();
-        }
+        objectiveService.getObjectiveById(idx).prettyPrint();
     }
 
     public void addTravelMethod(Scanner in) {
@@ -251,6 +242,8 @@ public class MainService {
     }
 
     public void showReminders(Scanner in) {
+        reminders = reminderService.getReminders();
+
         System.out.println("do you want to show completed reminders too?");
         System.out.println("type 'yes' or 'no'\n");
 

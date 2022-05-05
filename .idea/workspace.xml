@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f7a2a6f-29a3-47d6-bf69-106e3cffcb67" name="Changes" comment="created generic JDBC service and some particular ones">
+    <list default="true" id="1f7a2a6f-29a3-47d6-bf69-106e3cffcb67" name="Changes" comment="created reminder service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/Reminder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/Reminder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/VisitingObjective.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/VisitingObjective.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/MainService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/MainService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/services/ObjectiveService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/services/ObjectiveService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/services/ReminderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/services/ReminderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/VisitingObjective.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/VisitingObjective.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/MainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MainService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/services/ObjectiveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/services/ObjectiveService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/services/ReminderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/services/ReminderService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651763493002</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="created reminder service">
+      <created>1651765001176</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1651765001176</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -219,6 +229,7 @@
     <MESSAGE value="base functionality done" />
     <MESSAGE value="added JDBC connector" />
     <MESSAGE value="created generic JDBC service and some particular ones" />
-    <option name="LAST_COMMIT_MESSAGE" value="created generic JDBC service and some particular ones" />
+    <MESSAGE value="created reminder service" />
+    <option name="LAST_COMMIT_MESSAGE" value="created reminder service" />
   </component>
 </project>

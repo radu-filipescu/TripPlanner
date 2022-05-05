@@ -21,10 +21,10 @@ public class Main {
             switch (command) {
                 case "add objective" -> mainService.addObjective(in);
                 case "list objectives" -> mainService.listObjectives();
-//                case "mark objective as seen" -> mainService.markObjectiveSeen(in);
-//                case "show details for objective" -> mainService.showDetailsObjective(in);
-//                case "add travel method" -> mainService.addTravelMethod(in);
-//                case "show travel methods" -> mainService.showTravelMethods(in);
+                case "mark objective as seen" -> mainService.markObjectiveSeen(in);
+                case "show details for objective" -> mainService.showDetailsForObjective(in);
+                case "add travel method" -> mainService.addTravelMethod(in);
+                case "show travel methods" -> mainService.showTravelMethods();
 //                case "add reminder" -> mainService.addReminder(in);
 //                case "show reminders" -> mainService.showReminders(in);
 //                case "mark reminder as done" -> mainService.markReminderDone(in);

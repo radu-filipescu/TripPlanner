@@ -10,6 +10,7 @@ public class VisitingObjective {
     private String location;
     private double estimatedTimeToVisit;
     private ArrayList<Reminder> toDoDependencies;
+    private boolean wasSeen;
 
     public VisitingObjective() {
         this.Id = ++IdIncrement;
@@ -51,10 +52,14 @@ public class VisitingObjective {
         this.toDoDependencies = toDoDependencies;
     }
 
+    public void setSeen() { wasSeen = true; }
+
+    public boolean getSeen() { return wasSeen; }
+
     public void prettyPrint() {
         String delimiter = "#############################################";
         System.out.println(delimiter + "\n");
-        System.out.println(name);
+        System.out.println(Id + ". " + name);
 
         System.out.println("location: " + location);
         System.out.println("duration: " + estimatedTimeToVisit + "h\n");

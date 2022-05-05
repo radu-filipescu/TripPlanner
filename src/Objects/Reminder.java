@@ -39,6 +39,6 @@ public class Reminder {
     public void prettyPrint() {
         System.out.println("*********************");
         System.out.println(title);
-        System.out.println(description + "\n");
+        System.out.println(description);
     }
 }

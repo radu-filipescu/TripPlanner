@@ -2,11 +2,13 @@ package com.company;
 
 import Objects.Reminder;
 import Objects.TravelMethod;
+import Objects.TravelMethods.LongDistance;
+import Objects.TravelMethods.ShortDistance;
 import Objects.VisitingObjective;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import javax.swing.text.html.StyleSheet;
+import java.sql.Time;
+import java.util.*;
 
 public class MainService {
     private ArrayList<VisitingObjective> objectives = new ArrayList<VisitingObjective>();
@@ -48,12 +50,166 @@ public class MainService {
 
         // add the new objective to the list
         objectives.add(newObjective);
+
+        System.out.println("objective added succesfully!");
     }
 
     public void listObjectives() {
         for (VisitingObjective obj: objectives) {
-            obj.prettyPrint();
+            // prints unseen objectives
+            if(!obj.getSeen()) {
+                System.out.println(obj.getId() + ". " + obj.getName());
+            }
+        }
+        System.out.println();
+    }
 
+    public void markObjectiveSeen(Scanner in) {
+        System.out.println("enter the number of the objective you want to mark as seen");
+
+        int idx = Integer.parseInt(in.nextLine());
+
+        if(idx < 1 || idx > objectives.size()) {
+            System.out.println("error, there is no objective with that number");
+        }
+        else {
+            objectives.get(idx - 1).setSeen();
+
+            System.out.println("objective number " + idx + " marked as visited!");
+        }
+    }
+
+    public void showDetailsForObjective(Scanner in) {
+        System.out.println("enter number of the objective you want to see details about");
+        int idx = Integer.parseInt(in.nextLine());
+
+        if(idx < 1 || idx > objectives.size()) {
+            System.out.println("error, there is no objective with that number");
+        }
+        else {
+            objectives.get(idx - 1).prettyPrint();
+        }
+    }
+
+    public void addTravelMethod(Scanner in) {
+        System.out.println("is this a long-distance travel mean?");
+        System.out.println("type 'yes' or 'no'\n");
+
+        String answer = in.nextLine();
+
+        if(!answer.equals("yes") && !answer.equals("no")) {
+            System.out.println("input error");
+        }
+        else {
+            if(answer.equals("yes")) {
+                LongDistance newTravelMethod = new LongDistance();
+
+                System.out.println("what is this travel method?");
+                newTravelMethod.setName(in.nextLine());
+
+                System.out.println("what is the price for this?");
+                newTravelMethod.setPrice(in.nextLine());
+
+                System.out.println("what is the departure time? (hh:mm)");
+                answer = in.nextLine() + ":00";
+                newTravelMethod.setDepartureTime(Time.valueOf(answer));
+
+                System.out.println("what is the return time?");
+                answer = in.nextLine() + ":00";
+                newTravelMethod.setReturnTime(Time.valueOf(answer));
+
+                System.out.println("does this require a passport?");
+                System.out.println("type 'yes' or 'no'\n");
+
+                answer = in.nextLine();
+                while(!answer.equals("yes") && !answer.equals("no")) {
+                    System.out.println("input error\n");
+                    System.out.println("type 'yes' or 'no'\n");
+                    answer = in.nextLine();
+                }
+
+                if(answer.equals("yes"))
+                    newTravelMethod.setRequiresPassport(true);
+                else
+                    newTravelMethod.setRequiresPassport(false);
+
+                System.out.println("does this require prior checking-in?");
+                System.out.println("type 'yes' or 'no'\n");
+                answer = in.nextLine();
+                while(!answer.equals("yes") && !answer.equals("no")) {
+                    System.out.println("input error\n");
+                    System.out.println("type 'yes' or 'no'\n");
+                    answer = in.nextLine();
+                }
+
+                if(answer.equals("yes"))
+                    newTravelMethod.setRequiresCheckIn(true);
+                else
+                    newTravelMethod.setRequiresCheckIn(false);
+
+                travelMethods.add(newTravelMethod);
+
+                System.out.println("travel mean added succesfully!");
+            }
+            else {
+                ShortDistance newTravelMethod = new ShortDistance();
+
+                System.out.println("what is this travel method?");
+                newTravelMethod.setName(in.nextLine());
+
+                System.out.println("what is the price for this?");
+                newTravelMethod.setPrice(in.nextLine());
+
+                System.out.println("how many schedule times do you want to enter for this mean of transportation?");
+
+                int timeTableCount = Integer.parseInt(in.nextLine());
+
+                TreeSet<Time> timeTable = new TreeSet<Time>();
+                for(int i = 0; i < timeTableCount; ++i) {
+                    System.out.println("enter time: (hh:mm)");
+                    answer = in.nextLine() + ":00";
+                    Time newTime = Time.valueOf(answer);
+
+                    timeTable.add(newTime);
+                }
+
+                newTravelMethod.setTimeTable(timeTable);
+                travelMethods.add(newTravelMethod);
+
+                System.out.println("travel mean added succesfully!");
+            }
+        }
+    }
+
+    public void showTravelMethods() {
+        for(int i = 0; i < travelMethods.size(); ++i) {
+            TravelMethod currentMethod = travelMethods.get(i);
+
+            System.out.println("######");
+            System.out.println(Integer.toString(i + 1) + ". " + currentMethod.getName());
+            System.out.println("price: " + currentMethod.getPrice());
+
+//            System.out.println(currentMethod.getClass().toString());
+            if(currentMethod.getClass().toString().equals("class Objects.TravelMethods.LongDistance")) {
+                LongDistance currentLD = (LongDistance)currentMethod;
+                System.out.println("departure time: " + currentLD.getDepartureTime());
+                System.out.println("return time: " + currentLD.getReturnTime());
+
+                if(currentLD.isRequiresPassport())
+                    System.out.println("do not forget to bring your passport!");
+                if(currentLD.isRequiresCheckIn())
+                    System.out.println("do not forget to do the check-in a day prior to leaving!");
+            }
+            else {
+                ShortDistance currentSD = (ShortDistance)currentMethod;
+
+                System.out.println("the timetable is:");
+                for (Time t: currentSD.getTimeTable()) {
+                    System.out.println(t);
+                }
+            }
+
+            System.out.println();
         }
     }
 }

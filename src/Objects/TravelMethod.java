@@ -9,9 +9,8 @@ public class TravelMethod {
     private final int Id;
     private String name;
     private String price;
-    private Set<Time> timeTable;
 
-    TravelMethod() {
+    public TravelMethod() {
         this.Id = ++IdIncrement;
     }
 
@@ -33,19 +32,5 @@ public class TravelMethod {
 
     public void setPrice(String price) {
         this.price = price;
-    }
-
-    public Set<Time> getTimeTable() {
-        return timeTable;
-    }
-
-    public void setTimeTable(Set<Time> timeTable) {
-        this.timeTable = timeTable;
-    }
-
-    public void addEntryToTimeTable(Time t) {
-        Set<Time> temporary = this.getTimeTable();
-        temporary.add(t);
-        this.setTimeTable(temporary);
     }
 }

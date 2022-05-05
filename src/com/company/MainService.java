@@ -12,7 +12,7 @@ import java.util.*;
 
 public class MainService {
     private ArrayList<VisitingObjective> objectives = new ArrayList<VisitingObjective>();
-    private ArrayList<Reminder> reminder = new ArrayList<Reminder>();
+    private ArrayList<Reminder> reminders = new ArrayList<Reminder>();
     private ArrayList<TravelMethod> travelMethods = new ArrayList<TravelMethod>();
 
     public void addObjective(Scanner in) {
@@ -189,7 +189,6 @@ public class MainService {
             System.out.println(Integer.toString(i + 1) + ". " + currentMethod.getName());
             System.out.println("price: " + currentMethod.getPrice());
 
-//            System.out.println(currentMethod.getClass().toString());
             if(currentMethod.getClass().toString().equals("class Objects.TravelMethods.LongDistance")) {
                 LongDistance currentLD = (LongDistance)currentMethod;
                 System.out.println("departure time: " + currentLD.getDepartureTime());
@@ -210,6 +209,55 @@ public class MainService {
             }
 
             System.out.println();
+        }
+    }
+
+    public void addReminder(Scanner in) {
+        Reminder newReminder = new Reminder();
+
+        System.out.println("add a title for this reminder:");
+        newReminder.setTitle(in.nextLine());
+
+        System.out.println("enter a description for this reminder: (or press enter to leave blank)");
+        newReminder.setDescription(in.nextLine());
+
+        reminders.add(newReminder);
+        System.out.println("reminder added!");
+    }
+
+    public void showReminders(Scanner in) {
+        System.out.println("do you want to show completed reminders too?");
+        System.out.println("type 'yes' or 'no'\n");
+
+        String answer = in.nextLine();
+
+        if(!answer.equals("yes") && !answer.equals("no")) {
+            System.out.println("input error");
+            return;
+        }
+
+        for(int i = 0; i < reminders.size(); ++i) {
+            Reminder currentReminder = reminders.get(i);
+
+            if(answer.equals("yes") || !currentReminder.isDone()) {
+                currentReminder.prettyPrint();
+                System.out.println();
+            }
+        }
+    }
+
+    public void markReminderDone(Scanner in) {
+        System.out.println("enter the number of the reminder you want to mark as done");
+
+        int idx = Integer.parseInt(in.nextLine());
+
+        if(idx < 1 || idx > reminders.size()) {
+            System.out.println("error, there is no reminder with that number");
+        }
+        else {
+            reminders.get(idx - 1).setAsDone();
+
+            System.out.println("reminder number " + idx + " marked as done!");
         }
     }
 }

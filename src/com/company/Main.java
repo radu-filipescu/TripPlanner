@@ -25,10 +25,9 @@ public class Main {
                 case "show details for objective" -> mainService.showDetailsForObjective(in);
                 case "add travel method" -> mainService.addTravelMethod(in);
                 case "show travel methods" -> mainService.showTravelMethods();
-//                case "add reminder" -> mainService.addReminder(in);
-//                case "show reminders" -> mainService.showReminders(in);
-//                case "mark reminder as done" -> mainService.markReminderDone(in);
-//                case "remove reminder" -> mainService.removeRemainder(in);
+                case "add reminder" -> mainService.addReminder(in);
+                case "show reminders" -> mainService.showReminders(in);
+                case "mark reminder as done" -> mainService.markReminderDone(in);
                 case "help" -> Main.printCommands();
                 case "quit" -> done = true;
                 default -> System.out.println("invalid command!\n");

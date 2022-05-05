@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f7a2a6f-29a3-47d6-bf69-106e3cffcb67" name="Changes" comment="implemented objective list and did some refactoring">
-      <change afterPath="$PROJECT_DIR$/src/Objects/TravelMethods/LongDistance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Objects/TravelMethods/ShortDistance.java" afterDir="false" />
+    <list default="true" id="1f7a2a6f-29a3-47d6-bf69-106e3cffcb67" name="Changes" comment="implemented more stuff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/TravelMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/TravelMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/VisitingObjective.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/VisitingObjective.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/Reminder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/Reminder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/MainService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/MainService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Objects/Reminder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Reminder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/TravelMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/TravelMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/VisitingObjective.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/VisitingObjective.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/MainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MainService.java" afterDir="false" />
     </list>
@@ -159,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651583112110</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="implemented more stuff">
+      <created>1651746035253</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1651746035253</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -189,6 +191,7 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="changed project config" />
     <MESSAGE value="implemented objective list and did some refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented objective list and did some refactoring" />
+    <MESSAGE value="implemented more stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented more stuff" />
   </component>
 </project>

@@ -27,6 +27,7 @@ public class ReminderService extends JDBCgeneric {
         try {
             while (results.next()) {
                 Reminder currentReminder = new Reminder();
+                currentReminder.setId(results.getInt("Id"));
                 currentReminder.setObjectiveId(results.getInt("objectiveId"));
                 currentReminder.setTitle(results.getString("title"));
                 currentReminder.setDescription(results.getString("description"));
@@ -50,5 +51,18 @@ public class ReminderService extends JDBCgeneric {
                 unfiltered.remove(i);
 
         return unfiltered;
+    }
+
+    public void markReminderDone(int idx) {
+        String updateQuery = "update " + tableName + " set done=true where Id=" + idx;
+
+        executeSQLupdate(updateQuery);
+    }
+
+    public void removeReminder(int idx) {
+        String deleteQuery = "delete from " + tableName + " where Id=" + idx;
+        executeSQLupdate(deleteQuery);
+
+        System.out.println("reminder removed!");
     }
 }

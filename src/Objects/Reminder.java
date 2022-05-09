@@ -1,6 +1,7 @@
 package Objects;
 
 public class Reminder {
+    private int Id;
     private int objectiveId;
     private String title;
     private String description;
@@ -15,6 +16,10 @@ public class Reminder {
         this.title = title;
         this.description = description;
     }
+
+    public void setId(int idx) { Id = idx; }
+
+    public int getId(int idx) { return Id; }
 
     public void setTitle(String title) {
         this.title = title;
@@ -42,7 +47,7 @@ public class Reminder {
 
     public void prettyPrint() {
         System.out.println("*********************");
-        System.out.println(title);
+        System.out.println(Id + ". " + title);
         if(description.length() > 0)
             System.out.println(description);
         if(done) System.out.println("- completed -");

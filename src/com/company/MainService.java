@@ -5,8 +5,10 @@ import Objects.TravelMethod;
 import Objects.TravelMethods.LongDistance;
 import Objects.TravelMethods.ShortDistance;
 import Objects.VisitingObjective;
+import com.company.services.AuditService;
 import com.company.services.ObjectiveService;
 import com.company.services.ReminderService;
+import com.company.services.TravelMethodService;
 
 import java.sql.Time;
 import java.util.*;
@@ -14,6 +16,8 @@ import java.util.*;
 public class MainService {
     ObjectiveService objectiveService = new ObjectiveService();
     ReminderService reminderService = new ReminderService();
+    TravelMethodService travelService = new TravelMethodService();
+    AuditService auditService = new AuditService();
 
     private ArrayList<VisitingObjective> objectives = new ArrayList<VisitingObjective>();
     private ArrayList<Reminder> reminders = new ArrayList<Reminder>();
@@ -59,6 +63,7 @@ public class MainService {
         objectiveService.addObjective(newObjective);
 
         System.out.println("objective added succesfully!\n");
+        auditService.addLog("objective added");
     }
 
     public void listObjectives() {
@@ -70,6 +75,8 @@ public class MainService {
             }
         }
         System.out.println();
+
+        auditService.addLog("objectives printed");
     }
 
     public void markObjectiveSeen(Scanner in) {
@@ -80,6 +87,8 @@ public class MainService {
 
         objectiveService.markAsSeen(idx);
         System.out.println("objective number " + idx + " marked as visited!");
+
+        auditService.addLog("objective number " + idx + " marked seen");
     }
 
     public void showDetailsForObjective(Scanner in) {
@@ -88,6 +97,7 @@ public class MainService {
         int idx = Integer.parseInt(in.nextLine());
 
         objectiveService.getObjectiveById(idx).prettyPrint();
+        auditService.addLog("show details for objective " + idx);
     }
 
     public void addTravelMethod(Scanner in) {
@@ -146,7 +156,7 @@ public class MainService {
                 else
                     newTravelMethod.setRequiresCheckIn(false);
 
-                travelMethods.add(newTravelMethod);
+                travelService.addTravelMethod(newTravelMethod);
 
                 System.out.println("travel mean added succesfully!");
             }
@@ -173,14 +183,17 @@ public class MainService {
                 }
 
                 newTravelMethod.setTimeTable(timeTable);
-                travelMethods.add(newTravelMethod);
+                travelService.addTravelMethod(newTravelMethod);
 
                 System.out.println("travel mean added succesfully!");
             }
+            auditService.addLog("travel method added");
         }
     }
 
     public void showTravelMethods() {
+        travelMethods = travelService.getTravelMethods();
+
         for(int i = 0; i < travelMethods.size(); ++i) {
             TravelMethod currentMethod = travelMethods.get(i);
 
@@ -209,17 +222,27 @@ public class MainService {
 
             System.out.println();
         }
+        auditService.addLog("printed travel methods");
     }
 
     public void removeTravelMethod(Scanner in) {
-        System.out.println("enter number of the travel mean you want to remove");
-        int idx = Integer.parseInt(in.nextLine());
+        System.out.println("do you want to remove a long-distance travel method?");
+        System.out.println("type 'yes' or 'no'\n");
 
-        if(idx < 1 || idx > travelMethods.size()) {
-            System.out.println("error, there is no travel method with that number");
+        String answer = in.nextLine();
+        if(!answer.equals("yes") && !answer.equals("no")) {
+            System.out.println("input error");
         }
         else {
-            travelMethods.remove(idx);
+            System.out.println("enter number of the travel mean you want to remove");
+            int idx = Integer.parseInt(in.nextLine());
+
+            if(answer.equals("yes"))
+                travelService.removeLongDistance(idx);
+            else
+                travelService.removeShortDistance(idx);
+
+            auditService.addLog("remove travel method");
         }
     }
 
@@ -239,6 +262,7 @@ public class MainService {
         reminderService.addReminder(newReminder);
 
         System.out.println("reminder added!");
+        auditService.addLog("reminder added");
     }
 
     public void showReminders(Scanner in) {
@@ -262,20 +286,37 @@ public class MainService {
                 System.out.println();
             }
         }
+
+        auditService.addLog("printed reminders");
     }
 
     public void markReminderDone(Scanner in) {
         System.out.println("enter the number of the reminder you want to mark as done");
-
         int idx = Integer.parseInt(in.nextLine());
 
-        if(idx < 1 || idx > reminders.size()) {
-            System.out.println("error, there is no reminder with that number");
+        reminderService.markReminderDone(idx);
+        System.out.println("reminder number " + idx + " marked as done!");
+
+        auditService.addLog("reminder number " + idx + " marked as done");
+    }
+
+    public void removeReminder(Scanner in) {
+        System.out.println("enter the number of the reminder you want to mark as done");
+        int idx = Integer.parseInt(in.nextLine());
+
+        reminderService.removeReminder(idx);
+        auditService.addLog("remove reminder");
+    }
+
+    public void printLogs(Scanner in) {
+        System.out.println("how many logs to fetch? (leave blank for all)");
+        String answer = in.nextLine();
+
+        if(answer.length() == 0) {
+            auditService.printLogs();
         }
         else {
-            reminders.get(idx - 1).setAsDone();
-
-            System.out.println("reminder number " + idx + " marked as done!");
+            auditService.printLogs(Integer.parseInt(answer));
         }
     }
 }

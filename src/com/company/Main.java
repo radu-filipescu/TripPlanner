@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Main {
     public static ArrayList<String> commands = new ArrayList<String>(Arrays.asList("add objective", "list objectives", "mark objective as seen", "show details for objective",
-            "add travel method", "show travel methods", "add reminder", "show reminders", "mark reminder as done", "remove reminder"));
+            "add travel method", "show travel methods", "remove travel method", "add reminder", "show reminders", "mark reminder as done", "remove reminder", "logs"));
 
     public static void main(String[] args) throws IOException {
         boolean done = false;
@@ -31,6 +31,8 @@ public class Main {
                 case "add reminder" -> mainService.addReminder(in);
                 case "show reminders" -> mainService.showReminders(in);
                 case "mark reminder as done" -> mainService.markReminderDone(in);
+                case "remove reminder" -> mainService.removeReminder(in);
+                case "logs" -> mainService.printLogs(in);
                 case "help" -> Main.printCommands();
                 case "quit" -> done = true;
                 default -> System.out.println("invalid command!\n");

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f7a2a6f-29a3-47d6-bf69-106e3cffcb67" name="Changes" comment="created reminder service">
+    <list default="true" id="1f7a2a6f-29a3-47d6-bf69-106e3cffcb67" name="Changes" comment="fixed stuff added stuff">
+      <change afterPath="$PROJECT_DIR$/src/com/company/services/AuditService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/services/TravelMethodService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/VisitingObjective.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/VisitingObjective.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/Reminder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/Reminder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/MainService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/MainService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/services/ObjectiveService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/services/ObjectiveService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/services/ReminderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/services/ReminderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/VisitingObjective.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/VisitingObjective.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/Reminder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Reminder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/MainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MainService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/services/ObjectiveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/services/ObjectiveService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/services/ReminderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/services/ReminderService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -195,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651765001176</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fixed stuff added stuff">
+      <created>1651767091261</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1651767091261</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -230,6 +239,7 @@
     <MESSAGE value="added JDBC connector" />
     <MESSAGE value="created generic JDBC service and some particular ones" />
     <MESSAGE value="created reminder service" />
-    <option name="LAST_COMMIT_MESSAGE" value="created reminder service" />
+    <MESSAGE value="fixed stuff added stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed stuff added stuff" />
   </component>
 </project>

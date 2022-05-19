@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f7a2a6f-29a3-47d6-bf69-106e3cffcb67" name="Changes" comment="added audit&#10;added documentation&#10;fixed some db issued with short distance time tables&#10;&#10;!should be almost done">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Objects/Accommodation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Objects/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Objects/Events/IndoorEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Objects/Events/OutdoorEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/CSVgeneric.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/services/AccommodationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/services/EventService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/MainService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/MainService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/services/ReminderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/services/ReminderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/MainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MainService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/services/ReminderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/services/ReminderService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +113,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/mysql-connector-java-8.0.29.jar" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -201,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652099414290</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added audit&#10;added documentation&#10;fixed some db issued with short distance time tables&#10;&#10;!should be almost done">
+      <created>1652100320710</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1652100320710</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

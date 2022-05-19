@@ -19,7 +19,7 @@ public class ReminderService extends JDBCgeneric {
     }
 
     public ArrayList<Reminder> getReminders() {
-        String selectQuery = "select * from reminders";
+        String selectQuery = "select * from " + tableName;
 
         ArrayList<Reminder> reminders = new ArrayList<Reminder>();
         ResultSet results = executeSQLquery(selectQuery);
@@ -62,7 +62,5 @@ public class ReminderService extends JDBCgeneric {
     public void removeReminder(int idx) {
         String deleteQuery = "delete from " + tableName + " where Id=" + idx;
         executeSQLupdate(deleteQuery);
-
-        System.out.println("reminder removed!");
     }
 }

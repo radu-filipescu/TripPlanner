@@ -1,15 +1,17 @@
 package com.company;
 
+import Objects.Event;
+import Objects.Accommodation;
+import Objects.Events.IndoorEvent;
+import Objects.Events.OutdoorEvent;
 import Objects.Reminder;
 import Objects.TravelMethod;
 import Objects.TravelMethods.LongDistance;
 import Objects.TravelMethods.ShortDistance;
 import Objects.VisitingObjective;
-import com.company.services.AuditService;
-import com.company.services.ObjectiveService;
-import com.company.services.ReminderService;
-import com.company.services.TravelMethodService;
+import com.company.services.*;
 
+import java.sql.Array;
 import java.sql.Time;
 import java.util.*;
 
@@ -18,10 +20,14 @@ public class MainService {
     ReminderService reminderService = new ReminderService();
     TravelMethodService travelService = new TravelMethodService();
     AuditService auditService = new AuditService();
+    AccommodationService accommodationService = new AccommodationService();
+    EventService eventService = new EventService();
 
     private ArrayList<VisitingObjective> objectives = new ArrayList<VisitingObjective>();
     private ArrayList<Reminder> reminders = new ArrayList<Reminder>();
     private ArrayList<TravelMethod> travelMethods = new ArrayList<TravelMethod>();
+    private ArrayList<Accommodation> accommodations = new ArrayList<Accommodation>();
+    private ArrayList<Event> events = new ArrayList<Event>();
 
     public void addObjective(Scanner in) {
         VisitingObjective newObjective = new VisitingObjective();
@@ -305,7 +311,41 @@ public class MainService {
         int idx = Integer.parseInt(in.nextLine());
 
         reminderService.removeReminder(idx);
+        System.out.println("reminder removed!");
         auditService.addLog("remove reminder");
+    }
+
+    public void addAccommodation(Scanner in) {
+        Accommodation newAccommodation = new Accommodation();
+
+        System.out.println("enter the name of this accommodation:");
+        newAccommodation.setName(in.nextLine());
+
+        System.out.println("enter the location of this accommodation:");
+        newAccommodation.setLocation(in.nextLine());
+
+        System.out.println("what is the price per night?");
+        newAccommodation.setPrice(Integer.parseInt(in.nextLine()));
+
+        accommodationService.addAccommodation(newAccommodation);
+        System.out.println("accommodation added!");
+        auditService.addLog("accommodation added");
+    }
+
+    public void listAccommodations() {
+        accommodations = accommodationService.getAccommodations();
+
+        for(int i = 0; i < accommodations.size(); ++i)
+            accommodations.get(i).prettyPrint();
+    }
+
+    public void removeAccommodation(Scanner in) {
+        System.out.println("enter the number of the accommodation you want to remove:");
+        int idx = Integer.parseInt(in.nextLine());
+
+        accommodationService.removeAccommodation(idx);
+        System.out.println("accommodation removed!");
+        auditService.addLog("remove accommodation");
     }
 
     public void printLogs(Scanner in) {
@@ -317,6 +357,80 @@ public class MainService {
         }
         else {
             auditService.printLogs(Integer.parseInt(answer));
+        }
+    }
+
+    public void addEvent(Scanner in) {
+        System.out.println("is this a indoor event?");
+        System.out.println("type 'yes' or 'no'\n");
+
+        String answer = in.nextLine();
+
+        if(!answer.equals("yes") && !answer.equals("no")) {
+            System.out.println("input error");
+        }
+        else {
+            if(answer.equals("yes")) {
+                IndoorEvent newIndoorEvent = new IndoorEvent();
+
+                System.out.println("what is the name of the event?");
+                newIndoorEvent.setName(in.nextLine());
+
+                System.out.println("what is the location of this event?");
+                newIndoorEvent.setLocation(in.nextLine());
+
+                System.out.println("what is the entry time? (hh:mm)");
+                answer = in.nextLine() + ":00";
+                newIndoorEvent.setEventTime(Time.valueOf(answer));
+
+                System.out.println("what is the price for the ticket?");
+                newIndoorEvent.setTicketPrice(Integer.parseInt(in.nextLine()));
+
+                eventService.addEvent(newIndoorEvent);
+                System.out.println("indoor event added succesfully!");
+            }
+            else {
+                OutdoorEvent newOutdoorEvent = new OutdoorEvent();
+
+                System.out.println("what is the name of the event?");
+                newOutdoorEvent.setName(in.nextLine());
+
+                System.out.println("what is the location of this event?");
+                newOutdoorEvent.setLocation(in.nextLine());
+
+                System.out.println("how many days does this event take place?");
+                newOutdoorEvent.setDaysLength(Integer.parseInt(in.nextLine()));
+
+                System.out.println("does this event have camping?");
+                System.out.println("type 'yes' or 'no'\n");
+
+                answer = in.nextLine();
+                while(!answer.equals("yes") && !answer.equals("no")) {
+                    System.out.println("input error\n");
+                    System.out.println("type 'yes' or 'no'\n");
+                    answer = in.nextLine();
+                }
+                newOutdoorEvent.setHasCamping(answer == "yes");
+
+                eventService.addEvent(newOutdoorEvent);
+                System.out.println("outdoor event added succesfully!");
+            }
+            auditService.addLog("event added");
+        }
+    }
+
+    public void showEvents() {
+        events = eventService.getEvents();
+
+        for(int i = 0; i < events.size(); ++i) {
+            if(eventService.isIndoor(events.get(i))) {
+                IndoorEvent event = (IndoorEvent)events.get(i);
+                event.prettyPrint();
+            }
+            else {
+                OutdoorEvent event = (OutdoorEvent)events.get(i);
+                event.prettyPrint();
+            }
         }
     }
 }

@@ -19,7 +19,7 @@ public class Reminder {
 
     public void setId(int idx) { Id = idx; }
 
-    public int getId(int idx) { return Id; }
+    public int getId() { return Id; }
 
     public void setTitle(String title) {
         this.title = title;

@@ -1,22 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f7a2a6f-29a3-47d6-bf69-106e3cffcb67" name="Changes" comment="added audit&#10;added documentation&#10;fixed some db issued with short distance time tables&#10;&#10;!should be almost done">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Objects/Accommodation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Objects/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Objects/Events/IndoorEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Objects/Events/OutdoorEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/CSVgeneric.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/services/AccommodationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/services/EventService.java" afterDir="false" />
+    <list default="true" id="1f7a2a6f-29a3-47d6-bf69-106e3cffcb67" name="Changes" comment="added two types of Events and Accommodation classes">
+      <change afterPath="$PROJECT_DIR$/src/com/company/CSVservices/AccommodationServiceCSV.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/CSVservices/AuditServiceCSV.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/CSVservices/ObjectiveServiceCSV.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/CSVservices/ReminderServiceCSV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/Reminder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/Reminder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/CSVgeneric.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/CSVgeneric.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/MainService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/MainService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/services/ReminderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/services/ReminderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/services/AccommodationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/services/AuditService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/services/EventService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/services/ObjectiveService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/services/ReminderService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/services/TravelMethodService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/Reminder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Reminder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/CSVgeneric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CSVgeneric.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/MainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MainService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/services/ReminderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/services/ReminderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/services/AccommodationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/JDBCservices/AccommodationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/services/AuditService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/JDBCservices/AuditService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/services/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/JDBCservices/EventService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/services/ObjectiveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/JDBCservices/ObjectiveService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/services/ReminderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/JDBCservices/ReminderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/services/TravelMethodService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/JDBCservices/TravelMethodService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,10 +125,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/mysql-connector-java-8.0.29.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Storage" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Triferment\IdeaProjects\ProiectEAP\src\Storage" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -223,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652100320710</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added two types of Events and Accommodation classes">
+      <created>1652977204922</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1652977204922</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -260,6 +283,10 @@
     <MESSAGE value="created reminder service" />
     <MESSAGE value="fixed stuff added stuff" />
     <MESSAGE value="added audit&#10;added documentation&#10;fixed some db issued with short distance time tables&#10;&#10;!should be almost done" />
-    <option name="LAST_COMMIT_MESSAGE" value="added audit&#10;added documentation&#10;fixed some db issued with short distance time tables&#10;&#10;!should be almost done" />
+    <MESSAGE value="added two types of Events and Accommodation classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="added two types of Events and Accommodation classes" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ProiectEAP$Main.ic" NAME="Main Coverage Results" MODIFIED="1652985440857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

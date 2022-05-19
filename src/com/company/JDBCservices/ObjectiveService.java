@@ -1,4 +1,4 @@
-package com.company.services;
+package com.company.JDBCservices;
 
 import Objects.Reminder;
 import Objects.VisitingObjective;

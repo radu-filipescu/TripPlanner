@@ -5,9 +5,9 @@ import java.util.*;
 
 public class Main {
     public static ArrayList<String> commands = new ArrayList<String>(Arrays.asList("add objective", "list objectives", "mark objective as seen", "show details for objective",
-            "add event", "show events", "remove event", "add travel method", "show travel methods", "remove travel method",
+            "add event", "show events", "add travel method", "show travel methods", "remove travel method",
             "add reminder", "show reminders", "mark reminder as done", "remove reminder", "add accommodation",
-            "list accommodations", "remove accommodation","logs"));
+            "list accommodations", "remove accommodation", "logs"));
 
     public static void main(String[] args) throws IOException {
         boolean done = false;

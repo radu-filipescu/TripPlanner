@@ -1,9 +1,8 @@
-package com.company.services;
+package com.company.JDBCservices;
 
 import Objects.Event;
 import Objects.Events.IndoorEvent;
 import Objects.Events.OutdoorEvent;
-import Objects.Reminder;
 import com.company.JDBCgeneric;
 
 import java.sql.ResultSet;

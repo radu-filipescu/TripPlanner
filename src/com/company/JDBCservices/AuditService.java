@@ -1,12 +1,10 @@
-package com.company.services;
+package com.company.JDBCservices;
 
 import com.company.JDBCgeneric;
-import jdk.jfr.Timespan;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 
 public class AuditService extends JDBCgeneric {
     private final String tablename = "applogs";

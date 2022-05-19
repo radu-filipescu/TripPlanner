@@ -1,7 +1,6 @@
-package com.company.services;
+package com.company.JDBCservices;
 
 import Objects.Accommodation;
-import Objects.Reminder;
 import com.company.JDBCgeneric;
 
 import java.sql.ResultSet;

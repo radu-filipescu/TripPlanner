@@ -9,17 +9,25 @@ import Objects.TravelMethod;
 import Objects.TravelMethods.LongDistance;
 import Objects.TravelMethods.ShortDistance;
 import Objects.VisitingObjective;
-import com.company.services.*;
+import com.company.CSVservices.AccommodationServiceCSV;
+import com.company.CSVservices.AuditServiceCSV;
+import com.company.CSVservices.ObjectiveServiceCSV;
+import com.company.CSVservices.ReminderServiceCSV;
+import com.company.JDBCservices.*;
 
-import java.sql.Array;
+import java.io.FileNotFoundException;
 import java.sql.Time;
 import java.util.*;
 
 public class MainService {
+    //ObjectiveServiceCSV objectiveService = new ObjectiveServiceCSV("src/Storage/objectives.csv");
     ObjectiveService objectiveService = new ObjectiveService();
+    //ReminderServiceCSV reminderService = new ReminderServiceCSV("src/Storage/reminders.csv");
     ReminderService reminderService = new ReminderService();
     TravelMethodService travelService = new TravelMethodService();
+    //AuditServiceCSV auditService = new AuditServiceCSV("src/Storage/applogs.csv");
     AuditService auditService = new AuditService();
+    //AccommodationServiceCSV accommodationService = new AccommodationServiceCSV("src/Storage/accommodations.csv");
     AccommodationService accommodationService = new AccommodationService();
     EventService eventService = new EventService();
 
@@ -28,6 +36,9 @@ public class MainService {
     private ArrayList<TravelMethod> travelMethods = new ArrayList<TravelMethod>();
     private ArrayList<Accommodation> accommodations = new ArrayList<Accommodation>();
     private ArrayList<Event> events = new ArrayList<Event>();
+
+    public MainService() throws FileNotFoundException {
+    }
 
     public void addObjective(Scanner in) {
         VisitingObjective newObjective = new VisitingObjective();
@@ -332,7 +343,7 @@ public class MainService {
         auditService.addLog("accommodation added");
     }
 
-    public void listAccommodations() {
+    public void listAccommodations() throws FileNotFoundException {
         accommodations = accommodationService.getAccommodations();
 
         for(int i = 0; i < accommodations.size(); ++i)

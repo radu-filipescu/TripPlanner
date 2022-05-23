@@ -7,6 +7,8 @@ import com.company.JDBCgeneric;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class ReminderService extends JDBCgeneric {
     final private String tableName = "reminders";
@@ -48,12 +50,11 @@ public class ReminderService extends JDBCgeneric {
         ArrayList<Reminder> filtered = new ArrayList<>();
 
         for(int i = 0; i < unfiltered.size(); ++i) {
-            //System.out.println(unfiltered.get(i).getObjectiveId() + " vs " + idx);
             if (unfiltered.get(i).getObjectiveId() == idx)
                 filtered.add(unfiltered.get(i));
         }
 
-        //System.out.println(unfiltered.size());
+        Collections.sort(filtered);
 
         return filtered;
     }

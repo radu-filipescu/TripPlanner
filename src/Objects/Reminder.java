@@ -1,6 +1,6 @@
 package Objects;
 
-public class Reminder {
+public class Reminder implements Comparable<Reminder>{
     private int Id;
     private int objectiveId;
     private String title;
@@ -44,6 +44,11 @@ public class Reminder {
     public boolean isDone() { return done; }
 
     public void setAsDone() { done = true; }
+
+    public int compareTo(Reminder rem) {
+        if(rem.isDone()) return 1;
+        return -1;
+    }
 
     public void prettyPrint() {
         System.out.println("*********************");

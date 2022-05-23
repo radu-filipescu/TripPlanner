@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f7a2a6f-29a3-47d6-bf69-106e3cffcb67" name="Changes" comment="!finished">
+    <list default="true" id="1f7a2a6f-29a3-47d6-bf69-106e3cffcb67" name="Changes" comment="!finished v2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/MainService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/MainService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Storage/applogs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/Storage/applogs.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/CSVservices/AccommodationServiceCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CSVservices/AccommodationServiceCSV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/CSVservices/AuditServiceCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CSVservices/AuditServiceCSV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/CSVservices/ObjectiveServiceCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CSVservices/ObjectiveServiceCSV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/CSVservices/ReminderServiceCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CSVservices/ReminderServiceCSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/Reminder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/Objects/Reminder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/Storage/applogs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/Storage/applogs.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/CSVservices/AccommodationServiceCSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/CSVservices/AccommodationServiceCSV.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/CSVservices/AuditServiceCSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/CSVservices/AuditServiceCSV.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/CSVservices/ObjectiveServiceCSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/CSVservices/ObjectiveServiceCSV.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/CSVservices/ReminderServiceCSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/CSVservices/ReminderServiceCSV.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/JDBCservices/ReminderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProiectEAP/com/company/JDBCservices/ReminderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/Reminder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Reminder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/JDBCservices/ReminderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/JDBCservices/ReminderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/MainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MainService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652999842922</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="!finished v2">
+      <created>1653305581316</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1653305581316</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -275,7 +283,8 @@
     <MESSAGE value="added audit&#10;added documentation&#10;fixed some db issued with short distance time tables&#10;&#10;!should be almost done" />
     <MESSAGE value="added two types of Events and Accommodation classes" />
     <MESSAGE value="!finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="!finished" />
+    <MESSAGE value="!finished v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="!finished v2" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ProiectEAP$Main.ic" NAME="Main Coverage Results" MODIFIED="1652985440857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

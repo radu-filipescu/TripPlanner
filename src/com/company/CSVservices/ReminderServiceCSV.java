@@ -9,8 +9,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ReminderServiceCSV extends CSVgeneric {
-    public ReminderServiceCSV(String filepath) {
+    private ReminderServiceCSV(String filepath) {
         super(filepath);
+    }
+
+    private static ReminderServiceCSV instance = new ReminderServiceCSV("src/Storage/reminders.csv");
+
+    public static ReminderServiceCSV getInstance() {
+        return instance;
     }
 
     // for auto-increment

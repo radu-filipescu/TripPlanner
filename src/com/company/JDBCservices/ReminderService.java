@@ -1,5 +1,6 @@
 package com.company.JDBCservices;
 
+import Objects.Accommodation;
 import Objects.Reminder;
 import com.company.JDBCgeneric;
 
@@ -44,12 +45,17 @@ public class ReminderService extends JDBCgeneric {
 
     public ArrayList<Reminder> getObjectiveReminders(int idx) {
         ArrayList<Reminder> unfiltered = getReminders();
+        ArrayList<Reminder> filtered = new ArrayList<>();
 
-        for(int i = 0; i < unfiltered.size(); ++i)
-            if(unfiltered.get(i).getObjectiveId() != idx)
-                unfiltered.remove(i);
+        for(int i = 0; i < unfiltered.size(); ++i) {
+            //System.out.println(unfiltered.get(i).getObjectiveId() + " vs " + idx);
+            if (unfiltered.get(i).getObjectiveId() == idx)
+                filtered.add(unfiltered.get(i));
+        }
 
-        return unfiltered;
+        //System.out.println(unfiltered.size());
+
+        return filtered;
     }
 
     public void markReminderDone(int idx) {

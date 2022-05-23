@@ -20,14 +20,14 @@ import java.sql.Time;
 import java.util.*;
 
 public class MainService {
-    //ObjectiveServiceCSV objectiveService = new ObjectiveServiceCSV("src/Storage/objectives.csv");
+    //ObjectiveServiceCSV objectiveService = ObjectiveServiceCSV.getInstance();
     ObjectiveService objectiveService = new ObjectiveService();
-    //ReminderServiceCSV reminderService = new ReminderServiceCSV("src/Storage/reminders.csv");
+    //ReminderServiceCSV reminderService = ReminderServiceCSV.getInstance();
     ReminderService reminderService = new ReminderService();
     TravelMethodService travelService = new TravelMethodService();
-    //AuditServiceCSV auditService = new AuditServiceCSV("src/Storage/applogs.csv");
+    //AuditServiceCSV auditService = AuditServiceCSV.getInstance();
     AuditService auditService = new AuditService();
-    //AccommodationServiceCSV accommodationService = new AccommodationServiceCSV("src/Storage/accommodations.csv");
+    //AccommodationServiceCSV accommodationService = AccommodationServiceCSV.getInstance();
     AccommodationService accommodationService = new AccommodationService();
     EventService eventService = new EventService();
 
@@ -109,7 +109,6 @@ public class MainService {
     }
 
     public void showDetailsForObjective(Scanner in) {
-        objectives = objectiveService.getObjectives();
         System.out.println("enter number of the objective you want to see details about");
         int idx = Integer.parseInt(in.nextLine());
 

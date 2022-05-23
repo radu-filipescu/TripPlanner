@@ -10,8 +10,22 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class AccommodationServiceCSV extends CSVgeneric {
-    public AccommodationServiceCSV(String filepath) throws FileNotFoundException {
+    private AccommodationServiceCSV(String filepath) throws FileNotFoundException {
         super(filepath);
+    }
+
+    private static AccommodationServiceCSV instance;
+
+    static {
+        try {
+            instance = new AccommodationServiceCSV("src/Storage/accommodations.csv");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static AccommodationServiceCSV getInstance() {
+        return instance;
     }
 
     // for auto-increment, to replicate SQL behaviour
@@ -46,6 +60,14 @@ public class AccommodationServiceCSV extends CSVgeneric {
         }
 
         return accommodations;
+    }
+
+    public void removeAccommodation(int idx) {
+        ArrayList<Accommodation> accommodations = getAccommodations();
+
+        for(int i = 0; i < accommodations.size(); ++i)
+            if(accommodations.get(i).getId() == idx)
+                accommodations.remove(i);
     }
 }
 

@@ -3,6 +3,7 @@ package com.company.CSVservices;
 import Objects.Reminder;
 import Objects.VisitingObjective;
 import com.company.CSVgeneric;
+import com.company.JDBCservices.ObjectiveService;
 import com.company.JDBCservices.ReminderService;
 
 import java.sql.ResultSet;
@@ -10,8 +11,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ObjectiveServiceCSV extends CSVgeneric {
-    public ObjectiveServiceCSV(String filepath) {
+    private ObjectiveServiceCSV(String filepath) {
         super(filepath);
+    }
+
+    private static ObjectiveServiceCSV instance = new ObjectiveServiceCSV("src/Storage/objectives.csv");
+
+    public static ObjectiveServiceCSV getInstance() {
+        return instance;
     }
 
     public void addObjective(VisitingObjective obj) {

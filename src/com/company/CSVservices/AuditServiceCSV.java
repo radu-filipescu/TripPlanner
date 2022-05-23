@@ -33,8 +33,22 @@ class AppLog {
 }
 
 public class AuditServiceCSV extends CSVgeneric {
-    public AuditServiceCSV(String filepath) throws FileNotFoundException {
+    private AuditServiceCSV(String filepath) throws FileNotFoundException {
         super(filepath);
+    }
+
+    private static AuditServiceCSV instance;
+
+    static {
+        try {
+            instance = new AuditServiceCSV("src/Storage/applogs.csv");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static AuditServiceCSV getInstance() {
+        return instance;
     }
 
     // for auto-increment, to replicate SQL behaviour
